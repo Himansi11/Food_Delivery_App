@@ -1,15 +1,26 @@
+// ignore_for_file: must_be_immutable
+
 import 'package:flutter/material.dart';
 import 'package:foodapp/constants/constants.dart';
 import 'package:foodapp/controllers/tab_index_controller.dart';
 import 'package:get/get.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
+import 'package:foodapp/views/home/home_page.dart';
+import 'package:foodapp/views/search/search_page.dart';
+import 'package:foodapp/views/cart/cart_page.dart';
+import 'package:foodapp/views/profile/profile_page.dart';
 
 
-// ignore: must_be_immutable
+
 class MainScreen extends StatelessWidget {
   MainScreen({super.key});
 
-  List<Widget> pageList=[];
+  List<Widget> pageList= const[
+    HomePage(),
+    SearchPage(),
+    CartPage(),
+    ProfilePage()
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -17,11 +28,8 @@ class MainScreen extends StatelessWidget {
     return Obx(() =>Scaffold(
       body: Stack(     
         children:[
-          Container(
-            height: height,
-            width: width,
-            color: kOffwhite,
-          ),
+          pageList[controller.tabIndex],
+
           Align(
             alignment: Alignment.bottomCenter,
             child: Theme(data: Theme.of(context).copyWith(canvasColor: kPrimary), 
