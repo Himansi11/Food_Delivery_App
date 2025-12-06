@@ -2,15 +2,19 @@ import 'package:flutter/material.dart';
 import 'package:foodapp/constants/constants.dart';
 import 'package:foodapp/controllers/tab_index_controller.dart';
 import 'package:get/get.dart';
+import 'package:flutter_vector_icons/flutter_vector_icons.dart';
 
 
+// ignore: must_be_immutable
 class MainScreen extends StatelessWidget {
-  const MainScreen({super.key});
+  MainScreen({super.key});
+
+  List<Widget> pageList=[];
 
   @override
   Widget build(BuildContext context) {
     final controller =Get.put(TabIndexController());
-    return Scaffold(
+    return Obx(() =>Scaffold(
       body: Stack(     
         children:[
           Container(
@@ -27,17 +31,25 @@ class MainScreen extends StatelessWidget {
               unselectedIconTheme: const IconThemeData(color: Colors.black38),
               selectedIconTheme: const IconThemeData(color: kSecondary),
               onTap: (value){
-                print(value);
+                controller.setTabIndex=value;
               },
-              items: const [
-                BottomNavigationBarItem(icon: Icon(Icons.home), label:'Home'),
-                BottomNavigationBarItem(icon: Icon(Icons.search), label:'Search'),
-                BottomNavigationBarItem(icon: Icon(Icons.shopping_cart), label:'Cart'),
-                BottomNavigationBarItem(icon: Icon(Icons.person), label:'Profilr'),],
+              currentIndex: controller.tabIndex,
+              items:[
+                BottomNavigationBarItem(
+                  icon: controller.tabIndex==0 ? Icon(AntDesign.appstore1): Icon(AntDesign.appstore1), label:'Home'),
+                BottomNavigationBarItem(
+                  icon: Icon(Icons.search), label:'Search'),
+                const BottomNavigationBarItem(
+                  icon: Badge(
+                  label: Text('1'),
+                  child: Icon(FontAwesome.opencart)), label:'Cart'),
+                BottomNavigationBarItem(
+                  icon: controller.tabIndex == 3 ? const Icon(FontAwesome.user_circle): const Icon(FontAwesome.user_circle_o), label:'Profile'),],
             )),
           )
         ],
       ),
+    ) 
     );
   }
 }
