@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:foodapp/common/custom_appbar.dart';
 import 'package:foodapp/common/custom_conatiner.dart';
 import 'package:foodapp/constants/constants.dart';
+import 'package:foodapp/views/home/widgets/category_list.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -16,7 +17,11 @@ class HomePage extends StatelessWidget {
         child: const CustomAppbar()
        ),
       body: SafeArea(
-        child: CustomConatiner(containerContent: Container())
+        child: CustomConatiner(containerContent: Column(
+          children: [
+            CategoryList(),
+          ],
+        ))
       ),
     );
   }
