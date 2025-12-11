@@ -20,6 +20,7 @@ class HomePage extends StatelessWidget {
         child: CustomConatiner(containerContent: Column(
           children: [
             CategoryList(),
+            
           ],
         ))
       ),
