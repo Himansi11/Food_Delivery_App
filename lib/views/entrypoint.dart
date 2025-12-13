@@ -49,7 +49,7 @@ class MainScreen extends StatelessWidget {
                   icon: Icon(Icons.search), label:'Search'),
                 const BottomNavigationBarItem(
                   icon: Badge(
-                  label: Text('1'),
+                  label: Text('0'),
                   child: Icon(FontAwesome.opencart)), label:'Cart'),
                 BottomNavigationBarItem(
                   icon: controller.tabIndex == 3 ? const Icon(FontAwesome.user_circle): const Icon(FontAwesome.user_circle_o), label:'Profile'),],
