@@ -13,7 +13,7 @@ class AllFastestFoods extends StatelessWidget {
       appBar: AppBar(
         elevation: 0.3,
         backgroundColor: kOffwhite,
-        title: ReusableText(text: "FastestFoods Resturants",
+        title: ReusableText(text: "FastestFoods Restaurants",
         style: appStyle(13, kGrey, FontWeight.w600)),
         ),
         body: const Center(

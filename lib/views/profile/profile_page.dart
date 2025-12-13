@@ -12,7 +12,7 @@ class ProfilePage extends StatelessWidget {
       backgroundColor: kPrimary,
       appBar: PreferredSize(preferredSize: Size.fromHeight(130.h), 
       child: Container(
-        height: 130,
+        height: 130.h,
       )),
       body: SafeArea(
         child: CustomConatiner(containerContent: Container())
