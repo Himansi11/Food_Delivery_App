@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:foodapp/constants/constants.dart';
 import 'package:foodapp/constants/uidata.dart';
 import 'package:foodapp/views/home/widgets/food_widget.dart';
 
